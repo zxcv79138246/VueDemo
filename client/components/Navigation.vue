@@ -25,11 +25,25 @@
 export default {
   data() {
     return {
-      activeIndex: '1',
-      activeIndex2: '1'
+      // activeIndex: '1',
     }
   },
-  computed: {},
+  computed: {
+    activeIndex() {
+      var match = this.$route.matched[0].path
+      switch (match) {
+        case '/': {
+          return '1'
+        }
+        case '/about': {
+          return '2'
+        }
+        case '/professor': {
+          return '3'
+        }
+      }
+    }
+  },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);

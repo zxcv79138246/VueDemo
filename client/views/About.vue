@@ -37,4 +37,40 @@ export default {
     justify-content: space-around;
   }
 }
+
+.member-content {
+  display: flex;
+  justify-content: center;
+
+  .member-block {
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .member {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100px;
+
+      .img-box {
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 100px;
+
+        img {
+          width: 100px;
+        }
+      }
+
+      .name {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+}
 </style>
