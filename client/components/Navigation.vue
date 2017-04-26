@@ -5,17 +5,12 @@
              class="el-menu-demo"
              mode="horizontal"
              @select="handleSelect">
-      <el-menu-item index="1">
-        <router-link :to="{path: '/' }"
-                     tag="div">首頁</router-link>
-      </el-menu-item>
-      <el-menu-item index="2">
-        <router-link :to="{path:'/about'}"
-                     tag="div">關於我們</router-link>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <router-link :to="{path:'/professor'}"
-                     tag="div">指導老師</router-link>
+      <el-menu-item index="1"
+                    @click="goTo('/')">首頁</el-menu-item>
+      <el-menu-item index="2"
+                    @click="goTo('/about')">關於我們</el-menu-item>
+      <el-menu-item index="3"
+                    @click="goTo('/professor')">指導老師
       </el-menu-item>
     </el-menu>
   </div>
@@ -25,14 +20,13 @@
 export default {
   data() {
     return {
-      // activeIndex: '1',
     }
   },
   computed: {
     activeIndex() {
       var match = this.$route.matched[0].path
       switch (match) {
-        case '/': {
+        case '': {
           return '1'
         }
         case '/about': {
@@ -47,6 +41,9 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
+    },
+    goTo(path) {
+      this.$router.push({ path: path })
     }
   },
   created() { },
