@@ -6,7 +6,8 @@
   "scripts": {
     "test": "",
     "build": "webpack --config build/webpack.prod.js",
-    "dev": "node build/server.js"
+    "dev": "node build/server.js",
+    "server": "http-server ./dist -p 4000"
   },
   "author": "ChihChunLiu <zxcv79138246@gmail.com>",
   "license": "MIT",
@@ -20,6 +21,7 @@
   "dependencies": {
     "babel-runtime": "^6.18.0",
     "element-ui": "^1.2.9",
+    "http-server": "^0.9.0",
     "promise-polyfill": "^6.0.2",
     "vue": "^2.2.0",
     "vue-router": "^2.0.0",
